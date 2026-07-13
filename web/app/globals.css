@@ -1,0 +1,146 @@
+:root {
+  --accent: #2f9bd6;
+  --accent-hover: #2684bb;
+  --accent-deep: #1e6c99;
+  --ink: #16130d;
+  --cream: #f6f3ec;
+  --cream-2: #efeae0;
+  --light: #f5f2ec;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-archivo), -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---- accent buttons (replaces template style-hover) ---- */
+.btn-accent {
+  background: var(--accent);
+  color: var(--ink);
+  transition: background 0.2s ease;
+}
+.btn-accent:hover {
+  background: var(--accent-hover);
+}
+
+.btn-dark {
+  background: var(--ink);
+  color: var(--light);
+  transition: opacity 0.2s ease;
+}
+.btn-dark:hover {
+  opacity: 0.88;
+}
+
+.nav-link {
+  color: rgba(28, 26, 22, 0.72);
+  transition: color 0.2s ease;
+}
+.nav-link:hover {
+  color: var(--ink);
+}
+
+.link-accent {
+  color: var(--accent-deep);
+  transition: color 0.2s ease;
+}
+.link-accent:hover {
+  color: var(--accent);
+}
+
+/* ---- form focus (replaces template style-focus) ---- */
+.field:focus {
+  outline: none;
+  border-color: var(--accent) !important;
+  background: #ffffff !important;
+}
+
+/* ---- card hover lift ---- */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(22, 19, 13, 0.14);
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+.gallery-item img {
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* ---- section fade-up reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- responsive ---- */
+@media (max-width: 900px) {
+  .nav-links-desktop {
+    display: none !important;
+  }
+  .hero-h1 {
+    font-size: 56px !important;
+  }
+  .section-pad {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .h2-big {
+    font-size: 38px !important;
+  }
+  .stack-mobile {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-h1 {
+    font-size: 44px !important;
+  }
+}
